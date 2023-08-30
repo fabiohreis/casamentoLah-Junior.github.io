@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casamento da Lah</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background-image: url('seu_fundo.jpg');
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+  }
+  .top-bar {
+    background-color: grey;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .top-bar a {
+    color: #f0f0f0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 20px;
+  }
+  .top-bar a:hover {
+    background-color: #f0f0f0;
+    color: grey;
+  }
+  .title {
+    text-align: center;
+    font-size: 36px;
+    margin-top: 100px;
+  }
+  .countdown {
+    text-align: center;
+    font-size: 24px;
+    margin-top: 50px;
+    color: #ff0000;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <a href="pagina_endereco.html">Endereço</a>
+  <a href="repositorio_fotos.html">Fotos Civil</a>
+</div>
+<div class="title">
+  CONTAMOS COM SUA PRESENÇA
+</div>
+<div class="countdown">
+  <p>FALTA POUCO!!!!</p>
+  <div id="countdown"></div>
+</div>
+<script>
+  const countdownElement = document.getElementById("countdown");
+  const targetDate = new Date("2023-09-02T19:00:00");
+
+  function updateCountdown() {
+    const now = new Date();
+    const timeDiff = targetDate - now;
+
+    const days = Math.floor(timeDiff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((timeDiff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((timeDiff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((timeDiff % (1000 * 60)) / 1000);
+
+    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+</script>
+</body>
+</html>

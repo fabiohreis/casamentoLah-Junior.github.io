@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casamento Lah&Junior</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    background: rgba(0, 0, 0, 0.5) url('seu_fundo.jpg') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+  }
+  .top-bar {
+    background-color: grey;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 10px 0;
+  }
+  .top-bar a {
+    color: #f0f0f0;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-weight: bold;
+    margin: 0 20px;
+  }
+  .top-bar a:hover {
+    background-color: #f0f0f0;
+    color: grey;
+  }
+  .title {
+    text-align: left;
+    font-size: 36px;
+    margin-top: 10px;
+    font-weight: bold;
+    color: black;
+    margin-left: 20px;
+  }
+  .countdown {
+    text-align: left;
+    font-size: 30px;
+    margin: 20px;
+    margin-top: auto;
+    color: #ff0000;
+    font-weight: bold;
+  }
+</style>
+</head>
+<body>
+<div class="top-bar">
+  <a href="https://www.google.com/maps?q=Chácara+Viva+Águas+Claras+I,+Rodovia+Washington+Luiz,+KM426,+São+José+do+Rio+Preto+-+sp" target="_blank">Endereço</a>
+  <a href="https://reitoriaunespbr-my.sharepoint.com/:f:/g/personal/fabio_h_reis_unesp_br/EhnPQ9z4fL9JoRax0c_QNIIB6VK7EVrrlM44OVdQp-eOAA?e=1LegoL" target="_blank">Fotos Civil</a>
+</div>
+<div class="background-image"></div>
+<div class="content">
+  <div class="title">
+    CONTAMOS COM SUA PRESENÇA
+  </div>
+  <div class="countdown">
+    <p>FALTA POUCO!!!!</p>
+    <div id="countdown"></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"></script>
+<script>
+  const countdownElement = document.getElementById("countdown");
+  const targetDate = moment("2023-09-02T19:00:00");
+
+  function updateCountdown() {
+    const now = moment();
+    const duration = moment.duration(targetDate.diff(now));
+
+    const days = duration.days();
+    const hours = duration.hours();
+    const minutes = duration.minutes();
+    const seconds = duration.seconds();
+    const milliseconds = duration.milliseconds();
+
+    countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s ${milliseconds}ms`;
+  }
+
+  updateCountdown();
+  setInterval(updateCountdown, 10); // Atualiza a cada 10 milissegundos
+</script>
+</body>
+</html>
